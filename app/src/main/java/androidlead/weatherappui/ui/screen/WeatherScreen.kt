@@ -1,6 +1,7 @@
 package androidlead.weatherappui.ui.screen
 
 import androidlead.weatherappui.ui.screen.components.ActionBar
+import androidlead.weatherappui.ui.screen.components.AirQuality
 import androidlead.weatherappui.ui.screen.components.DailyForecast
 import androidlead.weatherappui.ui.theme.ColorBackground
 import androidx.compose.foundation.layout.Column
@@ -30,6 +31,10 @@ fun WeatherScreen() {
                 modifier = Modifier.height(12.dp)
             )
             DailyForecast()
+            Spacer(
+                modifier = Modifier.height(24.dp)
+            )
+            AirQuality()
         }
     }
 }

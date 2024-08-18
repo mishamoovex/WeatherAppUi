@@ -10,8 +10,10 @@ val ColorBackground = Color(0xFFF4DCF7).copy(alpha = 0.4f)
 val ColorSurface = Color.White
 val ColorImageShadow = Color(0xFFfdc228)
 val ColorWindForecast = Color.White.copy(alpha = 0.2f)
+val ColorAirQualityIconTitle = Color(0xFFa09bf0)
 
 val ColorTextPrimary = Color(0xFF2c2e35)
+val ColorTextPrimaryVariant = ColorTextPrimary.copy(alpha = 0.7f)
 val ColorTextSecondary = Color.White
 val ColorTextSecondaryVariant = ColorTextSecondary.copy(alpha = 0.7f)
 
