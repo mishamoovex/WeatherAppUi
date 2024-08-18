@@ -1,6 +1,7 @@
 package androidlead.weatherappui
 
 import android.os.Bundle
+import androidlead.weatherappui.ui.screen.WeatherScreen
 import androidlead.weatherappui.ui.theme.WeatherAppUiTheme
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
@@ -12,7 +13,7 @@ class MainActivity : ComponentActivity() {
         enableEdgeToEdge()
         setContent {
             WeatherAppUiTheme {
-
+                WeatherScreen()
             }
         }
     }
