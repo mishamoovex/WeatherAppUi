@@ -165,7 +165,7 @@ private fun ProgressBar(
             )
     ) {
         Text(
-            text = "Updating",
+            text = "Updating •",
             style = MaterialTheme.typography.labelSmall,
             color = ColorTextSecondary.copy(alpha = 0.7f)
         )
