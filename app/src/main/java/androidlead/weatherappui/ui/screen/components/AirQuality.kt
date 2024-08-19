@@ -11,14 +11,13 @@ import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.ExperimentalLayoutApi
+import androidx.compose.foundation.layout.FlowRow
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
-import androidx.compose.foundation.lazy.staggeredgrid.LazyVerticalStaggeredGrid
-import androidx.compose.foundation.lazy.staggeredgrid.StaggeredGridCells
-import androidx.compose.foundation.lazy.staggeredgrid.items
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Icon
@@ -33,6 +32,7 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 
+@OptIn(ExperimentalLayoutApi::class)
 @Composable
 fun AirQuality(
     modifier: Modifier = Modifier,
@@ -51,19 +51,17 @@ fun AirQuality(
             verticalArrangement = Arrangement.spacedBy(16.dp)
         ) {
             AirQualityHeader()
-            LazyVerticalStaggeredGrid(
+
+            FlowRow(
                 modifier = Modifier.fillMaxWidth(),
+                maxItemsInEachRow = 3,
                 horizontalArrangement = Arrangement.spacedBy(16.dp),
-                verticalItemSpacing = 16.dp,
-                columns = StaggeredGridCells.Fixed(3)
+                verticalArrangement = Arrangement.spacedBy(16.dp)
             ) {
-                items(
-                    items = data,
-                    key = { it.title }
-                ) { item ->
+                data.onEach { item ->
                     AirQualityInfo(
                         data = item,
-                        modifier = Modifier.fillMaxWidth()
+                        modifier = Modifier.weight(weight = 1f)
                     )
                 }
             }
